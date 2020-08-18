@@ -1,0 +1,90 @@
+$font-size: 0.875rem;
+$nav-width: 980px;
+
+.nav {
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  * {
+    box-sizing: content-box;
+  }
+
+  &--fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+}
+
+.nav-inner {
+  max-width: $nav-width;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+.nav-list {
+  margin: 0 -10px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-list__item {
+  height: var(--global-nav-height);
+  position: relative;
+  vertical-align: top;
+  padding: 0 10px;
+}
+
+.nav-item__link {
+  font-size: $font-size;
+  line-height: var(--global-nav-height);
+  height: var(--global-nav-height);
+  position: relative;
+  font-weight: 400;
+  letter-spacing: .01em;
+  color: #f5f5f7;
+  display: inline-block;
+  opacity: .8;
+  white-space: nowrap;
+  transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+    opacity: 1;
+  }
+
+  &--hidden {
+    span {
+      position: absolute;
+      text-indent: -100vw;
+    }
+  }
+
+  &--home {
+    background-size: 16px 44px;
+    background-repeat: no-repeat;
+    background-image: url(https://www.apple.com/ac/globalnav/6/en_US/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_apple_image__cxwwnrj0urau_large.svg);
+    background-position: center center;
+    width: 16px;
+  }
+
+  &--search {
+    background-size: 18px 88px;
+    background-repeat: no-repeat;
+    background-image: url(https://www.apple.com/ac/globalnav/6/en_US/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_search_image__fca9mfoh8a2q_large.svg);
+    background-position: 0 0;
+    width: 18px;
+  }
+
+  &--bag {
+    background-size: 17px 44px;
+    background-repeat: no-repeat;
+    background-image: url(https://www.apple.com/ac/globalnav/6/en_US/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_bag_image__bmix8075eg4i_large.svg);
+    background-position: center center;
+    width: 17px;
+  }
+}
